@@ -14,16 +14,17 @@ public class Slots {
     int a, b, c, d, e;
     int count = 0;
     String answer = "y";
+    int MAX = 10;
      
      do {
         System.out.println("Lets play a game of slots!");
 
         while (answer.equalsIgnoreCase("y")){
-            a = generator.nextInt(50);
-            b = generator.nextInt(50);
-            c = generator.nextInt(50);
-            d = generator.nextInt(50);
-            e = generator.nextInt(50);
+            a = generator.nextInt(MAX);
+            b = generator.nextInt(MAX);
+            c = generator.nextInt(MAX);
+            d = generator.nextInt(MAX);
+            e = generator.nextInt(MAX);
          
             System.out.println(a + "\t" + b + "\t" + c + "\t" + d + "\t" + e);
          
