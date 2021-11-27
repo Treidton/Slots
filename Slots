@@ -1,0 +1,62 @@
+package slots;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Slots {
+
+    
+    public static void main(String[] args) {
+        
+    Scanner scan = new Scanner(System.in);
+    Random generator = new Random();
+     
+    int a, b, c, d, e;
+    int count = 0;
+    String answer = "y";
+     
+     do {
+        System.out.println("Lets play a game of slots!");
+
+        while (answer.equalsIgnoreCase("y")){
+            a = generator.nextInt(50);
+            b = generator.nextInt(50);
+            c = generator.nextInt(50);
+            d = generator.nextInt(50);
+            e = generator.nextInt(50);
+         
+            System.out.println(a + "\t" + b + "\t" + c + "\t" + d + "\t" + e);
+         
+            if ((a == b && b == c) || (a == b && b == d) || (a == c && c == d) 
+                || (b == c && c == d) || (a == b && b == e) || (a == c && c == e)
+                || (a == d && d == e) || (b == c && c == e) || (b == d && d == e) 
+                || (c == d && d == e)){
+                System.out.println("Jackpot!!");
+                System.out.println("it took you " + count + " tries to win!");
+             break;
+             }
+  
+            if  (a == b || b == c || a == c || a == d || b == d || c == d){
+                System.out.println("Just miss!");
+                count++;
+             }
+            else {
+                System.out.println("Sorry!");
+                count++;
+            }
+     }
+    System.out.println("Try again? (y/n)");
+    answer = scan.nextLine();
+    count = 0;
+    }
+     
+        while(answer.equalsIgnoreCase("y"));{
+            System.out.println();
+        }
+            if (answer.equalsIgnoreCase("n")){
+                System.out.println("Thanks for playing!");
+            }
+    }
+  
+}
+   
